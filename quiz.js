@@ -75,10 +75,10 @@ function verifReponse(reponseChoisie, boutonClique) {
   const bonneReponse = quiz[questionIndex].correct;
 
   if (reponseChoisie.toLowerCase() === bonneReponse.toLowerCase()) {
-    boutonClique.classList.add("correct");
+    boutonClique.classList.add("vrais");
     score++;
   } else {
-    boutonClique.classList.add("wrong");
+    boutonClique.classList.add("faux");
   }
 
   document.querySelectorAll(".reponse-btn").forEach(btn => {
@@ -100,15 +100,13 @@ function questionSuivante() {
 }
 
 function afficherResultat() {
-  document.getElementById("question").textContent =
-    `Quiz terminé 🎉 Score : ${score} / ${quiz.length}`;
-
+  document.getElementById("question").textContent =`Quiz terminé 🎉 Score : ${score} / ${quiz.length}`;
   document.getElementById("reponse").innerHTML = "";
   document.getElementById("btnSuivant").style.display = "none";
 }
 
-
-
-
-
 afficheQuestion();
+
+
+
+
